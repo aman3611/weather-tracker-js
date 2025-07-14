@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 470px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+    color: #fff;
+    padding: 40px 35px;
+    animation: floatUp 1.2s ease forwards;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search input {
+    flex: 1;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.search input:focus {
+    outline: none;
+    box-shadow: 0 0 12px #00feba;
+}
+
+.search button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #00feba;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search button:hover {
+    background: #04d9b2;
+    transform: scale(1.05);
+}
+
+.search button img {
+    width: 20px;
+}
+
+.weather-icon {
+    width: 150px;
+    margin-top: 25px;
+    animation: pop 0.8s ease-in-out forwards;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+@keyframes pop {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.weather h1 {
+    font-size: 64px;
+    margin: 10px 0 5px;
+}
+
+.weather h2 {
+    font-size: 32px;
+    font-weight: 300;
+    color: #e0e0e0;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.error {
+    text-align: center;
+    margin-top: 10px;
+    color: #ff8a8a;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
